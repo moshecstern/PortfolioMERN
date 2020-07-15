@@ -1,2 +1,2 @@
-# churchland
-churchland
+# Moshe Sterns' Portfolio
+
