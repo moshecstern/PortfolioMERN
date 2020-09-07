@@ -141,6 +141,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/contacts', require('./routes/contacts'));
 app.use('/api/resources', require('./routes/resources'));
 app.use('/api/staff', require('./routes/staff'));
+app.use('/api/strains', require('./routes/strains'));
+app.use('/api/products', require('./routes/products'));
 // app.use('/stripe', require('./routes/stripe'));
 // app.use('/api/stripe', require('./routes/stripe'));
 // Serve static assets in production

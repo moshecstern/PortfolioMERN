@@ -61,7 +61,7 @@ const App = () => {
               <AlertState>
                   <Router>
                     <Fragment>
-                      <Navbar />
+                      {/* <Navbar /> */}
                       <div className={classes.bg}>
                         <Alerts />
                         <Switch className={classes.container}>
@@ -82,6 +82,7 @@ const App = () => {
                           <Route exact path="/payfail" component={PayFail} />
                           {/* <Route exact path="/checkout" component={Checkout} />
                           <Route exact path="/plans" component={Plans} /> */}
+                          
                         </Switch>
                         <Footer />
                       </div>

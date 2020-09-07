@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   overlay: {
     position: 'absolute',
+    justifyContent: 'center',
     top: 0,
     bottom: 0,
     right: 0,
@@ -30,6 +31,8 @@ const useStyles = makeStyles(theme => ({
   mainFeaturedPostContent: {
     color: '#828789',
     position: 'relative',
+    justifyContent: 'center',
+    textAlign: 'center',
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(6),
@@ -82,6 +85,7 @@ export default function MainFeaturedPost(props) {
             <Typography className={classes.titletheme} component="h1" variant="h1" color="inherit">
               {post.title}
             </Typography>
+            <br />
             <Typography className={classes.desctheme} variant="subtitle2" color="inherit" paragraph>
               {post.description}
             </Typography>

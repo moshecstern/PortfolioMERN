@@ -12,6 +12,8 @@ import ContactUs from './ContactUs'
 import MainFeaturedPost from '../layout/MainFeaturedPost';
 import FeaturedPost from '../layout/FeaturedPost';
 import Dbparagraph from '../layout/Dbparagraph'
+import Timeline from '../layout/Timeline'
+// import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 // import Main from '../../components/Material-ui/Main'; 
 // import Sidebar from '../../components/Material-ui/Sidebar';
 // import Footer from '../../components/Material-ui/Footer';
@@ -21,7 +23,7 @@ import Dbparagraph from '../layout/Dbparagraph'
 // import Link from '@material-ui/core/Link';
 // import MoreTabs from '../../components/AppBar/MoreTabs';
 import MainIMG from '../../Images/oceanHealthcare.jpg'
-import whoweareIMG from '../../Images/mWeissman.jpg'
+import whoweareIMG from '../../Images/whoweare.png'
 import locationsIMG from '../../Images/mainIMG.jpg'
 import {
   Grid,
@@ -76,12 +78,12 @@ const useStyles = makeStyles(theme => ({
 // ];
 
 const mainFeaturedPost = {
-  title: 'Churchland Psychological Center',
+  title: 'Moshe C Stern',
   description:
-    "Counseling Services in Hampton Roads, VA",
+    "Full Stack Web Developer",
     image: MainIMG,
   // image: 'https://oceanservice.noaa.gov/facts/ocean-human-health.jpg',
-  imgText: 'Churchland Psychological Center',
+  imgText: 'Moshe C Stern',
   linkText: 'Our Forms',
 };
 
@@ -91,7 +93,7 @@ const featuredPosts = [
     // catagory: 'myapplication',
     // date: 'Check',
     description:
-      'Established in 1981, Churchland Psychological Center has been offering the highest quality psychotherapy and counseling services for almost 40 years. Our philosophy is to focus on the special relationship between each patient and his or her therapist, without “interference” by unnecessary administrative procedures. Hence, all appointments are arranged directly with your therapist, and each therapist is directly available to their patients without having to go through our central office. We accept all major insurance carriers, and file insurance claims for each patient.',
+      "I'm a Full Stack Web Developer and Israeli Military veteran with a life-long dedication to learning through life experience. Effective at creative thinking and problem solving under pressure to accomplish any task. Technical training experience building live applications using Node js, Express, Mysql & MongoDB databases, React, and more. My passion is learning new technologies and understanding how to dive deep into them to create useful, working products to be used by consumers. I am excited to leverage these skills as a part of a team to build better products and experiences.",
     image: whoweareIMG,
     imageText: 'Image Text',
     link: '/who'
@@ -168,6 +170,26 @@ const featuredPosts = [
 //     { name: 'Facebook', icon: FacebookIcon },
 //   ],
 // };
+const TimelineInfo = [
+  {
+    Catagory: "Work Experience",
+  DateL:"April 2020 - July 2020",
+  Title:"Churchland Psychological Center",
+  SubText:"Because it's awesome!",
+  SubText2:"Collect, Discover and Explore Comics and Superheros"
+  },
+  {
+    
+DateL:"April 2020 - July 2020",
+Title:"The Chevra",
+SubText:"Because it's awesome!",
+// SubText2:"Collect, Discover and Explore Comics and Superheros"
+  }
+]
+// const [MyCatagory, SetMyCatagory] = React.useState("all")
+// const myTimeline= TimelineInfo.filter(MyT => MyT.Catagory === MyCatagory)
+//   // TimelineInfo.Catagory === MyCatagory)
+
 
 export default function AboutPage(props) {
   // console.log(props.match.params.name)
@@ -185,7 +207,13 @@ export default function AboutPage(props) {
 
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
-          
+
+
+<Timeline
+TimelineInfo={TimelineInfo}
+// TimelineInfo={myTimeline}
+ />
+
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
               <FeaturedPost key={post.title} post={post}/>

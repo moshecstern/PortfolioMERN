@@ -6,6 +6,7 @@ import Forum from './Forum'
 // import ContactUs from '../Features/ContactUs'
 import Payment from './Payment'
 
+import Products from './Products';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    color: theme.palette.primary.dark
+    color: theme.palette.primary.dark,
+    // paddingBottom: 0
   },
   tabs: {
     // color: 'pink',
@@ -64,7 +66,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={0}>
           {/* <Typography>{children}</Typography> */}
           {children}
         </Box>
@@ -104,28 +106,33 @@ export default function ScrollableTabsButtonAuto() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="relative" color="primary">
+      <AppBar position="fixed"
+      //  color="primary"
+       >
         <Tabs
         className={classes.tabs}
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          // textColor="primary"
+          indicatorColor="secondary"
+          textColor="primary"
           variant="scrollable"
           scrollButtons="auto"
           aria-label="Healthcare Options"
         >
           <Tab label="Home" {...a11yProps(0)} />
-          <Tab label="Therapists" {...a11yProps(1)} />
-          <Tab label="Locations" {...a11yProps(2)} />
-          <Tab label="Forms" {...a11yProps(3)} />
+          <Tab label="Services" {...a11yProps(1)} />
+          <Tab label="Blog" {...a11yProps(2)} />
+          <Tab label="Experience" {...a11yProps(3)} />
           <Tab label="Payment" {...a11yProps(4)} />
           <Tab label="FAQs" {...a11yProps(5)} />
           {/* <Tab label="Contact Us" {...a11yProps(6)} /> */}
         </Tabs>
       </AppBar>
+      {/* add tab panal with logo MCS */}
       <TabPanel value={value} index={0}>
+      
       <About />
+      {/* <Products /> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
       <StaffCard />
