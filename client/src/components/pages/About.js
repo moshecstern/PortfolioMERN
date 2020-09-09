@@ -64,6 +64,14 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+// Need to ADD Top Projects, Top Products (web & physical), Bio, Top Blogs, 
+
+
+
+
+
+
+
 // const sections = [
 //   { title: 'Technology', url: '#' },
 //   { title: 'Design', url: '#' },
@@ -89,7 +97,7 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: 'Who We Are',
+    title: 'Who I Am',
     // catagory: 'myapplication',
     // date: 'Check',
     description:
@@ -99,16 +107,20 @@ const featuredPosts = [
     link: '/who'
   },
   {
-    title: 'Where We Are',
+    title: 'Work With Me',
     // catagory: 'application',
     // date: 'Apply Now',
     description:
-      'Churchland Psychological Center offers individual therapy for adults and children, family and marriage counseling, psychological testing and a full range of psychological services in Hampton Roads, VA. Our offices are located in the Churchland section of Chesapeake, Greenbrier, and Norfolk, VA.',
+      'Web & Software Development: Hard working & dedicated to making you the best',
     // image: 'https://source.unsplash.com/random',
     image: locationsIMG,
     imageText: 'Image Text',
     link: '/where'
   },
+
+//
+// 
+
   // {
   //   title: 'Forms',
   //   // catagory: 'myapplication',

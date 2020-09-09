@@ -5,7 +5,7 @@ import Forms from './Forms'
 import Forum from './Forum'
 // import ContactUs from '../Features/ContactUs'
 import Payment from './Payment'
-
+import Marketplace from './Marketplace'
 import Products from './Products';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -138,7 +138,7 @@ export default function ScrollableTabsButtonAuto() {
       <StaffCard />
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Locations />
+      <Marketplace />
       </TabPanel>
       <TabPanel value={value} index={3}>
       <Forms />

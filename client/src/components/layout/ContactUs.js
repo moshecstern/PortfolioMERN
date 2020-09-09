@@ -47,10 +47,12 @@ h1theme: {
 const sidebar = {
     title: 'Contact Us Here',
     description:
-      '3101 American Legion Road, Suite 21B Chesapeake, VA 23321',
+      'Philadelphia, Pa',
       // Email Us
       number: '(757) 483-3404 (for all offices)',
-      email: 'office@cpc.hush.com',
+      email: 'moshecstern@gmail.com',
+      linkdiin: 'https://www.linkedin.com/in/moshe-stern-413205176/',
+      facebook: 'https://www.facebook.com/moshecstern/'
 }
 
 
@@ -127,27 +129,28 @@ const ContactUs = props => {
                 rel="noopener noreferrer"
                 href="https://hushforms.com/contactcpc"> */}
         <Typography variant="subtitle2" >
-          <Link 
+          {/* <Link 
           underline="always"
           className={classes.footerTheme}
           target="_blank"
                 rel="noopener noreferrer"
                 href="https://hushforms.com/contactcpc">
           {sidebar.title}
-          </Link>
+          </Link> */}
+          {sidebar.title}
         </Typography>
         {/* </Button> */}
         {/* SOCIAL MEDIA */}
 
                 <IconButton aria-label="Facebook" target="_blank"
                 rel="noopener noreferrer" className={classes.footerTheme}
-                href="https://www.facebook.com/Churchland-Psychological-Center-116786685049281">
+                href={sidebar.facebook}>
             <FacebookIcon />
           </IconButton>
 
   <IconButton aria-label="Facebook" target="_blank"
                 rel="noopener noreferrer" className={classes.footerTheme}
-                href="https://www.linkedin.com/company/churchland-psychological-ctr/about/">
+                href={sidebar.linkdiin}>
            
             <LinkedInIcon />
           </IconButton>
@@ -158,9 +161,9 @@ const ContactUs = props => {
         <a href={"tel:" + sidebar.number}>{sidebar.number}</a>
         
         </Typography> */}
-        <Button target="_blank"
+        {/* <Button target="_blank"
                 rel="noopener noreferrer" className={classes.footerTheme}
-                href={"tel:" + sidebar.number}>{sidebar.number}</Button>
+                href={"tel:" + sidebar.number}>{sidebar.number}</Button> */}
 
                  <Button target="_blank" color="inherit" 
                 rel="noopener noreferrer" className={classes.footerTheme}

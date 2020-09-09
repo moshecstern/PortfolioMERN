@@ -16,6 +16,15 @@ mongoose.connect(
 //   img: '../../Images/sAsprey.jpg',
 //   date: new Date(Date.now())
 // },
+// https://rkcustomcreations.wixsite.com/moshportfolio
+const MessageSeed  = [
+  {
+  Email: 'Moshecstern@gmail.com',
+  Heading: 'Question',
+  Message: 'ayyayayayayayaydadaada'
+}
+]
+
 const ResumeSeed = [
   {
     name: 'Moshe Stern',
