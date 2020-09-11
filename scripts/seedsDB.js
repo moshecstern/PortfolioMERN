@@ -24,18 +24,20 @@ const MessageSeed  = [
   Message: 'ayyayayayayayaydadaada'
 }
 ]
-
-const ResumeSeed = [
-  {
-    name: 'Moshe Stern',
-    DOB: 1994-11-18,
-    Headline: "I'm a Full Stack Web Developer and Israeli Military veteran with a life-long dedication to learning through life experience. Effective at creative thinking and problem solving under pressure to accomplish any task. Technical training experience building live applications using Node js, Express, Mysql & MongoDB databases, React, and more. My passion is learning new technologies and understanding how to dive deep into them to create useful, working products to be used by consumers. I am excited to leverage these skills as a part of a team to build better products and experiences.",
-    // Resume: ,
-    skills: ['HTML5', 'CSS3', 'Bootstrap', 'Material-UI', 'JavaScript', 'JQuery', 'Restful API', 'Ajax', 'Axios'],
-    timeline: [
+const UserSeed = [
+{
+  name: 'Moshe Stern',
+  DOB: 1994-11-18,
+  Headline: "I'm a Full Stack Web Developer and Israeli Military veteran with a life-long dedication to learning through life experience. Effective at creative thinking and problem solving under pressure to accomplish any task. Technical training experience building live applications using Node js, Express, Mysql & MongoDB databases, React, and more. My passion is learning new technologies and understanding how to dive deep into them to create useful, working products to be used by consumers. I am excited to leverage these skills as a part of a team to build better products and experiences.",
+  // Resume: ,
+  skills: ['HTML5', 'CSS3', 'Bootstrap', 'Material-UI', 'JavaScript', 'JQuery', 'Restful API', 'Ajax', 'Axios'],
+  
+}
+]
+const ExperienceSeed = [
       {
         Title: 'Churchland Psychological Center',
-        Catagory: 'Work',
+        Catagory: 'Experience',
         DateStarted: 2020-04-01,
         DateEnded: 2020-07-01,
         Role: 'Web Developer',
@@ -48,9 +50,9 @@ const ResumeSeed = [
       },
       {
         Title: 'The Chevra',
-        Catagory: 'Work',
-        DateStarted: 2020-04-01,
-        DateEnded: 2020-07-01,
+        Catagory: 'Experience',
+        DateStarted: 2019-04-01,
+        // DateEnded: 2020-07-01,
         Role: 'Web Solutions / Logistical Coordinator',
         DescriptionA: 'Designed, and maintain website',
         DescriptionB: "Longer Info if i have it",
@@ -58,22 +60,46 @@ const ResumeSeed = [
         Website: 'https://www.chevra.net',
         // CodeLink: 'htttps://',
         Image: 'https://',
+      },
+      {
+        Title: 'Churchland Psychological Center',
+        Catagory: 'Client',
+        DateStarted: 2020-03-01,
+        DateEnded: 2020-07-01,
+        Role: 'Web Developer',
+        DescriptionA: 'Designed, and maintain website',
+        DescriptionB: "Longer Info if i have it",
+        Skills: ['Wix', 'JavaScript', 'SalesForce', 'Google Sheets'],
+        Website: 'https://www.chevra.net',
+        // CodeLink: 'htttps://',
+        Image: 'https://',
+      },
+      {
+        Title: 'Full Stack Web Development Certificate',
+        Catagory: 'Education',
+        DateStarted: 2019-10-01,
+        DateEnded: 2020-02-01,
+        Role: 'Web Developer',
+        DescriptionA: 'University of Pennsylvania',
+        DescriptionB: "Longer Info if i have it",
+        Skills: ['Wix', 'JavaScript', 'SalesForce', 'Google Sheets'],
+        Website: 'https://www.chevra.net',
+        // CodeLink: 'htttps://',
+        Image: 'https://',
       }
-    ],
-    Products: [
-{
-  Title: "Full Stack Websites",
-  Price: 500
-},
-{
-  Title: "Front-End Design",
-  Price: 250
-}
-    ] 
-  }
+    ]
+
+
+ const ProductsSeed= [
+    {
+      Title: "Full Stack Websites",
+      Price: 500
+    },
+    {
+      Title: "Front-End Design",
+      Price: 250
+    }
   ]
-
-
 
 const resourcesSeed = [
   // {
@@ -206,6 +232,18 @@ db.Staff
 db.Resources
   .remove({})
   .then(() => db.Resources.collection.insertMany(resourcesSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted into FAQ's!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+  
+  db.Experience
+  .remove({})
+  .then(() => db.Experience.collection.insertMany(ExperienceSeed))
   .then(data => {
     console.log(data.result.n + " records inserted into FAQ's!");
     process.exit(0);

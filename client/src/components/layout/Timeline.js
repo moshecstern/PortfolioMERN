@@ -13,6 +13,7 @@ import HotelIcon from '@material-ui/icons/Hotel';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import useAxios from "axios-hooks";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,20 +26,31 @@ const useStyles = makeStyles((theme) => ({
 const Infoimeline = props => {
 // export default function CustomizedTimeline() {
   const classes = useStyles();
-  const [MyCatagory, SetMyCatagory] = React.useState();
+  const [MyCatagory, SetMyCatagory] = React.useState(props.Catagory);
+  const [{ data: mydata, loading }, randomtext] = useAxios({
+    headers: {
+      'Content-Type': 'application/json'
+  },
+    url: "/api/experience/catagory/"+MyCatagory,
+    // headers: { Authorization: `JWT ${accessString}` }
+  });
 // const [MyIcon, setMyIcon] = React.useState([props.TimelineInfo.Icon])
 
 {/* {Info.Catagory &&
 <Typography varient="h1">{Info.Catagory}</Typography>} */}
-
+if (loading) {
+  return <></>;
+}
   return (
+    <>
+    {!mydata ? null : (
     <Timeline align="alternate">
       {/* {props.TimelineInfo.filter(Info => Info.Catagory === MyCatagory ( */}
-    {props.TimelineInfo.map(Info =>(
+    {mydata.map(Info =>(
       <TimelineItem>
         <TimelineOppositeContent>
           <Typography variant="body2" color="textSecondary">
-           {Info.DateL}
+           {Info.DateStarted} - {Info.DateEnded}
           </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -56,8 +68,8 @@ const Infoimeline = props => {
               {Info.Title}
               
             </Typography>
-            <Typography>{Info.SubText}</Typography>
-            <Typography>{Info.SubText2}</Typography>
+            <Typography>{Info.DescriptionA}</Typography>
+            <Typography>{Info.DescriptionB}</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -116,6 +128,8 @@ const Infoimeline = props => {
         </TimelineContent>
       </TimelineItem> */}
     </Timeline>
+    )}
+  </>
   );
 }
 export default Infoimeline

@@ -4,5 +4,6 @@ module.exports = {
     Contact: require("./Contact"),
     Staff: require("./StaffModel"),
     Products: require("./Products"),
-    Strains: require("./Strains")
+    Strains: require("./Strains"),
+    Experience: require("./Experience")
   };

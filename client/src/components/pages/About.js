@@ -13,6 +13,7 @@ import MainFeaturedPost from '../layout/MainFeaturedPost';
 import FeaturedPost from '../layout/FeaturedPost';
 import Dbparagraph from '../layout/Dbparagraph'
 import Timeline from '../layout/Timeline'
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 // import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 // import Main from '../../components/Material-ui/Main'; 
 // import Sidebar from '../../components/Material-ui/Sidebar';
@@ -29,7 +30,9 @@ import {
   Grid,
   CssBaseline,
   Typography,
-  Link
+  Link,
+  Container,
+  Button
 } from "@material-ui/core";
 // import Cookies from 'js-cookie';
 
@@ -46,21 +49,34 @@ const useStyles = makeStyles(theme => ({
       sidebarSection: {
         marginTop: theme.spacing(3),
       },
-      // h1theme: {
-      //   color: theme.palette.secondary.dark,
-      //   paddingLeft: 40,
-      //   margin: 20,
-      //   marginTop: 40,
-      //   textAlign: 'center',
-      //   padding: 10,
-      //   [theme.breakpoints.down('md')]: {
-      //     fontSize: 50,
-      //   }
-      // },
-      // secondaryheader: {
-      //   textAlign: 'center',
+      h1theme: {
+        color: theme.palette.secondary,
+        paddingLeft: 40,
+        margin: 20,
+        marginTop: 40,
+        fontSize: 40,
+        textAlign: 'center',
+        padding: 10,
+        [theme.breakpoints.down('md')]: {
+          fontSize: 30,
+        }
+      },
+      secondaryheader: {
+        textAlign: 'center',
         
-      // }
+      },
+      buttongroup:{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingBottom: 5,
+        marginBottom: 5,
+
+      },
+      timeline: {
+        marginRight: 45,
+        marginLeft: 50
+       
+      }
 
 }));
 
@@ -93,30 +109,53 @@ const mainFeaturedPost = {
   // image: 'https://oceanservice.noaa.gov/facts/ocean-human-health.jpg',
   imgText: 'Moshe C Stern',
   linkText: 'Our Forms',
+  linkdInLink: 'https://www.linkedin.com/in/moshe-stern-413205176/',
 };
 
 const featuredPosts = [
   {
-    title: 'Who I Am',
+    title: 'Freelance',
     // catagory: 'myapplication',
     // date: 'Check',
     description:
-      "I'm a Full Stack Web Developer and Israeli Military veteran with a life-long dedication to learning through life experience. Effective at creative thinking and problem solving under pressure to accomplish any task. Technical training experience building live applications using Node js, Express, Mysql & MongoDB databases, React, and more. My passion is learning new technologies and understanding how to dive deep into them to create useful, working products to be used by consumers. I am excited to leverage these skills as a part of a team to build better products and experiences.",
-    image: whoweareIMG,
-    imageText: 'Image Text',
+      "Hire me to build a technology based product for you. Web Development, Database Management, and Cloud Services.",
+    // image: whoweareIMG,
+    // imageText: 'Image Text',
     link: '/who'
   },
   {
-    title: 'Work With Me',
+    title: 'professional',
     // catagory: 'application',
     // date: 'Apply Now',
     description:
       'Web & Software Development: Hard working & dedicated to making you the best',
     // image: 'https://source.unsplash.com/random',
-    image: locationsIMG,
+    // image: locationsIMG,
+    // imageText: 'Image Text',
+    link: '/where'
+  },
+  {
+    title: 'Products',
+    // catagory: 'application',
+    // date: 'Apply Now',
+    description:
+      'Online retailer AllStern, All products are created or researched by me',
+    // image: 'https://source.unsplash.com/random',
+    // image: locationsIMG,
     imageText: 'Image Text',
     link: '/where'
   },
+  {
+    title: 'Blog',
+    // catagory: 'application',
+    // date: 'Apply Now',
+    description:
+      'A host of interesting topics to explore, add and comment',
+    // image: 'https://source.unsplash.com/random',
+    // image: locationsIMG,
+    imageText: 'Image Text',
+    link: '/where'
+  }
 
 //
 // 
@@ -207,6 +246,20 @@ export default function AboutPage(props) {
   // console.log(props.match.params.name)
   const classes = useStyles();
   // const [selectedDashboard, setSelectedDashboard] = React.useState('about')
+const [Catagory, setCatagory] = React.useState('Experience')
+
+// Axios Call using Catagory as filter to find experiences and fill timeline props
+// const [{ data: mydata, loading }, randomtext] = useAxios({
+//   headers: {
+//     'Content-Type': 'application/json'
+// },
+//   url: "/api/experience/catagory/"+Catagory,
+//   // headers: { Authorization: `JWT ${accessString}` }
+// });
+async function searchExperience(EX) {
+  setCatagory(EX);
+  // randomtext()
+}
 
   return (
     <>
@@ -220,11 +273,25 @@ export default function AboutPage(props) {
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
 
+<Typography className={classes.h1theme}>
+  Experience
+</Typography>
+{/* buttons for All, education, Experiences, Projects/ Clients */}
+<ButtonGroup className={classes.buttongroup} color="secondary" aria-label="outlined secondary button group">
+  <Button onClick={()=> searchExperience('clients')}>Clients</Button>
+  <Button onClick={()=> searchExperience('Experience')}>Experience</Button>
+  <Button onClick={()=> searchExperience('Education')}>Education</Button>
+  <Button onClick={()=> searchExperience('Fulltimeline')}>Full Timeline</Button>
+</ButtonGroup>
 
-<Timeline
-TimelineInfo={TimelineInfo}
-// TimelineInfo={myTimeline}
+<hr/>
+<Container maxWidth="md">
+<Timeline className={classes.timeline}
+// TimelineInfo={TimelineInfo}
+// TimelineInfo={mydata}
+Catagory={Catagory}
  />
+</Container>
 
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
