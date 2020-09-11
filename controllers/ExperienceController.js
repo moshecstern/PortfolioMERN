@@ -4,19 +4,19 @@ const db = require("../models");
 module.exports = {
 getbycatagory: function(req, res) {
 db.Experience
-.findOne({ Catagory: req.params.catagory}, req.body)
+.findOne({ catagory: req.params.catagory}, req.body)
 .then(dbresult => res.json(dbresult))
 .catch(err => res.status(404).json(err));
 },
 editbycatagory: function(req, res) {
     db.Experience
-    .findOneAndUpdate({ Catagory: req.params.catagory }, req.body)
+    .findOneAndUpdate({ catagory: req.params.catagory }, req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
 createbycatagory: function(req, res) {
     db.Experience
-    .create({ Catagory: req.params.catagory }, req.body)
+    .create({ catagory: req.params.catagory }, req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },

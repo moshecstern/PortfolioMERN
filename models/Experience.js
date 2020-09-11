@@ -5,7 +5,7 @@ const experienceSchema = new Schema({
   Title: String,
   userID: String,
   Rating: Number,
-  Catagory: String,
+  catagory: String,
   Role: String,
   DescriptionA: String,
   DescriptionB: String,

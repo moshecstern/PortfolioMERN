@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
 const Infoimeline = props => {
 // export default function CustomizedTimeline() {
   const classes = useStyles();
-  const [MyCatagory, SetMyCatagory] = React.useState(props.Catagory);
+  // const [MyCatagory, SetMyCatagory] = React.useState(props.Catagory);
   const [{ data: mydata, loading }, randomtext] = useAxios({
     headers: {
       'Content-Type': 'application/json'
   },
-    url: "/api/experience/catagory/"+MyCatagory,
+    url: "/api/experience/catagory/"+props.Catagory,
     // headers: { Authorization: `JWT ${accessString}` }
   });
 // const [MyIcon, setMyIcon] = React.useState([props.TimelineInfo.Icon])

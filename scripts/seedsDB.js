@@ -37,7 +37,7 @@ const UserSeed = [
 const ExperienceSeed = [
       {
         Title: 'Churchland Psychological Center',
-        Catagory: 'Experience',
+        catagory: 'Experience',
         DateStarted: 2020-04-01,
         DateEnded: 2020-07-01,
         Role: 'Web Developer',
@@ -50,7 +50,7 @@ const ExperienceSeed = [
       },
       {
         Title: 'The Chevra',
-        Catagory: 'Experience',
+        catagory: 'Experience',
         DateStarted: 2019-04-01,
         // DateEnded: 2020-07-01,
         Role: 'Web Solutions / Logistical Coordinator',
@@ -63,7 +63,7 @@ const ExperienceSeed = [
       },
       {
         Title: 'Churchland Psychological Center',
-        Catagory: 'Client',
+        catagory: 'Client',
         DateStarted: 2020-03-01,
         DateEnded: 2020-07-01,
         Role: 'Web Developer',
@@ -76,7 +76,7 @@ const ExperienceSeed = [
       },
       {
         Title: 'Full Stack Web Development Certificate',
-        Catagory: 'Education',
+        catagory: 'Education',
         DateStarted: 2019-10-01,
         DateEnded: 2020-02-01,
         Role: 'Web Developer',
