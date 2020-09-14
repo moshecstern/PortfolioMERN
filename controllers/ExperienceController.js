@@ -29,7 +29,7 @@ deletebyid: function(req, res) {
 },
 getAll: function(req, res) {
     db.Experience.find(req.query)
-    .sort({rating: -1})
+    // .sort({rating: -1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -14,7 +14,10 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import useAxios from "axios-hooks";
-
+import {
+  ButtonGroup,
+  Button
+} from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '6px 16px',
@@ -27,30 +30,40 @@ const Infoimeline = props => {
 // export default function CustomizedTimeline() {
   const classes = useStyles();
   // const [MyCatagory, SetMyCatagory] = React.useState(props.Catagory);
-  const [{ data: mydata, loading }, randomtext] = useAxios({
-    headers: {
-      'Content-Type': 'application/json'
-  },
-    url: "/api/experience/catagory/"+props.Catagory,
-    // headers: { Authorization: `JWT ${accessString}` }
-  });
+  // const [Catagory, setCatagory] = React.useState('Experience')
+  // const [{ data: mydata, loading }, randomtext] = useAxios({
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  // },
+  //   url: "/api/experience/catagory/"+ Catagory,
+  //   // headers: { Authorization: `JWT ${accessString}` }
+  // });
 // const [MyIcon, setMyIcon] = React.useState([props.TimelineInfo.Icon])
-
+// async function searchExperience(EX) {
+//   setCatagory(EX);
+//   randomtext()
+// }
 {/* {Info.Catagory &&
 <Typography varient="h1">{Info.Catagory}</Typography>} */}
-if (loading) {
-  return <></>;
-}
+// if (props.Loading) {
+//   return <></>;
+// }
   return (
     <>
-    {!mydata ? null : (
+    {/* <ButtonGroup className={classes.buttongroup} color="secondary" aria-label="outlined secondary button group">
+  <Button onClick={()=> searchExperience('clients')}>Clients</Button>
+  <Button onClick={()=> searchExperience('Experience')}>Experience</Button>
+  <Button onClick={()=> searchExperience('Education')}>Education</Button>
+  <Button onClick={()=> searchExperience('Fulltimeline')}>Full Timeline</Button>
+</ButtonGroup> */}
+    {/* {!props.TimelineInfo ? null : ( */}
     <Timeline align="alternate">
       {/* {props.TimelineInfo.filter(Info => Info.Catagory === MyCatagory ( */}
-    {mydata.map(Info =>(
+    {props.TimelineInfo.map(Info =>(
       <TimelineItem>
         <TimelineOppositeContent>
           <Typography variant="body2" color="textSecondary">
-           {Info.DateStarted} - {Info.DateEnded}
+           {Info.DateStarted && Info.DateStarted} - {Info.DateEnded && Info.DateEnded}
           </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -128,7 +141,7 @@ if (loading) {
         </TimelineContent>
       </TimelineItem> */}
     </Timeline>
-    )}
+    {/* )} */}
   </>
   );
 }

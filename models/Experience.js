@@ -13,8 +13,8 @@ const experienceSchema = new Schema({
   Website: String,
   CodeLink: String,
   Image: String,
-  DateStarted: {type: Date},
-  DateEnded: {type: Date},
+  DateStarted: {type: String},
+  DateEnded: {type: String},
   display: {type: Boolean},
   date: { type: Date, default: Date.now }
 });

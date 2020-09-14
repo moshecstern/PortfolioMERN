@@ -12,8 +12,8 @@ import ContactUs from './ContactUs'
 import MainFeaturedPost from '../layout/MainFeaturedPost';
 import FeaturedPost from '../layout/FeaturedPost';
 import Dbparagraph from '../layout/Dbparagraph'
-import Timeline from '../layout/Timeline'
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import TimelineC from '../Copage/TimelineC'
+// import ButtonGroup from '@material-ui/core/ButtonGroup';
 // import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 // import Main from '../../components/Material-ui/Main'; 
 // import Sidebar from '../../components/Material-ui/Sidebar';
@@ -221,32 +221,13 @@ const featuredPosts = [
 //     { name: 'Facebook', icon: FacebookIcon },
 //   ],
 // };
-const TimelineInfo = [
-  {
-    Catagory: "Work Experience",
-  DateL:"April 2020 - July 2020",
-  Title:"Churchland Psychological Center",
-  SubText:"Because it's awesome!",
-  SubText2:"Collect, Discover and Explore Comics and Superheros"
-  },
-  {
-    
-DateL:"April 2020 - July 2020",
-Title:"The Chevra",
-SubText:"Because it's awesome!",
-// SubText2:"Collect, Discover and Explore Comics and Superheros"
-  }
-]
-// const [MyCatagory, SetMyCatagory] = React.useState("all")
-// const myTimeline= TimelineInfo.filter(MyT => MyT.Catagory === MyCatagory)
-//   // TimelineInfo.Catagory === MyCatagory)
 
 
 export default function AboutPage(props) {
   // console.log(props.match.params.name)
   const classes = useStyles();
   // const [selectedDashboard, setSelectedDashboard] = React.useState('about')
-const [Catagory, setCatagory] = React.useState('Experience')
+// const [Catagory, setCatagory] = React.useState('Experience')
 
 // Axios Call using Catagory as filter to find experiences and fill timeline props
 // const [{ data: mydata, loading }, randomtext] = useAxios({
@@ -256,10 +237,10 @@ const [Catagory, setCatagory] = React.useState('Experience')
 //   url: "/api/experience/catagory/"+Catagory,
 //   // headers: { Authorization: `JWT ${accessString}` }
 // });
-async function searchExperience(EX) {
-  setCatagory(EX);
-  // randomtext()
-}
+// async function searchExperience(EX) {
+//   setCatagory(EX);
+//   // randomtext()
+// }
 
   return (
     <>
@@ -273,25 +254,9 @@ async function searchExperience(EX) {
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
 
-<Typography className={classes.h1theme}>
-  Experience
-</Typography>
-{/* buttons for All, education, Experiences, Projects/ Clients */}
-<ButtonGroup className={classes.buttongroup} color="secondary" aria-label="outlined secondary button group">
-  <Button onClick={()=> searchExperience('clients')}>Clients</Button>
-  <Button onClick={()=> searchExperience('Experience')}>Experience</Button>
-  <Button onClick={()=> searchExperience('Education')}>Education</Button>
-  <Button onClick={()=> searchExperience('Fulltimeline')}>Full Timeline</Button>
-</ButtonGroup>
 
-<hr/>
-<Container maxWidth="md">
-<Timeline className={classes.timeline}
-// TimelineInfo={TimelineInfo}
-// TimelineInfo={mydata}
-Catagory={Catagory}
- />
-</Container>
+<TimelineC />
+
 
           <Grid container spacing={4}>
             {featuredPosts.map(post => (

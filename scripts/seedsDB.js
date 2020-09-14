@@ -38,8 +38,8 @@ const ExperienceSeed = [
       {
         Title: 'Churchland Psychological Center',
         catagory: 'Experience',
-        DateStarted: 2020-04-01,
-        DateEnded: 2020-07-01,
+        DateStarted: '2020-04-01',
+        DateEnded: '2020-07-01',
         Role: 'Web Developer',
         DescriptionA: 'Designed, and maintain website',
         DescriptionB: "Longer Info if i have it",
@@ -51,8 +51,8 @@ const ExperienceSeed = [
       {
         Title: 'The Chevra',
         catagory: 'Experience',
-        DateStarted: 2019-04-01,
-        // DateEnded: 2020-07-01,
+        DateStarted: '2019-04-01',
+        DateEnded: 'Current',
         Role: 'Web Solutions / Logistical Coordinator',
         DescriptionA: 'Designed, and maintain website',
         DescriptionB: "Longer Info if i have it",
@@ -64,8 +64,8 @@ const ExperienceSeed = [
       {
         Title: 'Churchland Psychological Center',
         catagory: 'Client',
-        DateStarted: 2020-03-01,
-        DateEnded: 2020-07-01,
+        DateStarted: '2020-03-01',
+        DateEnded: '2020-07-01',
         Role: 'Web Developer',
         DescriptionA: 'Designed, and maintain website',
         DescriptionB: "Longer Info if i have it",
@@ -77,8 +77,8 @@ const ExperienceSeed = [
       {
         Title: 'Full Stack Web Development Certificate',
         catagory: 'Education',
-        DateStarted: 2019-10-01,
-        DateEnded: 2020-02-01,
+        DateStarted: '2019-10-01',
+        DateEnded: '2020-02-01',
         Role: 'Web Developer',
         DescriptionA: 'University of Pennsylvania',
         DescriptionB: "Longer Info if i have it",
@@ -216,36 +216,36 @@ const resourcesSeed = [
     body1:  "Please click on the appropriate link below and the forms will be sent to you within one business day."
   }
 ];
-db.Staff
-  .remove({})
-  .then(() => db.Staff.collection.insertMany(staffSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted into staff!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Staff
+//   .remove({})
+//   .then(() => db.Staff.collection.insertMany(staffSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted into staff!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
 
-db.Resources
-  .remove({})
-  .then(() => db.Resources.collection.insertMany(resourcesSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted into FAQ's!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Resources
+//   .remove({})
+//   .then(() => db.Resources.collection.insertMany(resourcesSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted into FAQ's!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
   
   db.Experience
   .remove({})
   .then(() => db.Experience.collection.insertMany(ExperienceSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted into FAQ's!");
+    console.log(data.result.n + " records inserted into Experiences's!");
     process.exit(0);
   })
   .catch(err => {
